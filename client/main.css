@@ -1,0 +1,27 @@
+body {
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+table {
+    border: 1px royalblue solid;
+    border-collapse: collapse;
+}
+
+table caption {
+    text-shadow: 0 2px 3px #555;
+    padding: 10px;
+    font-size: 20px; 
+}
+
+table th {
+    border-bottom: 1px royalblue solid;
+}
+
+table td {
+    padding: 5px;
+}
+
+tr:nth-child(even) {
+    background: lightcyan;
+}
