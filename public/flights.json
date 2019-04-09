@@ -1,0 +1,66 @@
+[
+    {
+        "id": "ISR-6090",
+        "from": "Tel-Aviv",
+        "to": "Barcelona",
+        "departure": "2019-04-25 21:40",
+        "arrival": "2019-04-25 1:20",
+        "by": "El Al"
+    },
+    {
+        "id": "ISR-6091",
+        "from": "Tel-Aviv",
+        "to": "Barcelona",
+        "departure": "2019-04-26 21:40",
+        "arrival": "2019-04-27 1:20",
+        "by": "El Al"
+    },
+    {
+        "id": "IND-791",
+        "from": "Mumbai",
+        "to": "Tel-Aviv",
+        "departure": "2019-04-27 13:40",
+        "arrival": "2019-04-28 1:20",
+        "by": "Air India"
+    },
+    {
+        "id": "IND-795",
+        "from": "Tel-Aviv",
+        "to": "Mumbai",
+        "departure": "2019-04-28 15:00",
+        "arrival": "2019-04-27 22:20",
+        "by": "Air India"
+    },
+    {
+        "id": "FRC-500",
+        "from": "Tel-Aviv",
+        "to": "Paris",
+        "departure": "2019-04-20 15:00",
+        "arrival": "2019-04-20 19:20",
+        "by": "Air France"
+    },
+    {
+        "id": "FRC-430",
+        "from": "Paris",
+        "to": "Tel-Aviv",
+        "departure": "2019-04-20 16:00",
+        "arrival": "2019-04-20 20:45",
+        "by": "Air France"
+    },
+    {
+        "id": "ANT-430",
+        "from": "Paris",
+        "to": "Antarctica",
+        "departure": "2019-04-22 14:00",
+        "arrival": "2019-04-22 20:45",
+        "by": "Antarctica Air"
+    },
+    {
+        "id": "ANT-431",
+        "from": "Antarctica",
+        "to": "Tel-Aviv",
+        "departure": "2019-04-23 10:00",
+        "arrival": "2019-04-23 20:45",
+        "by": "Antarctica Air"
+    }
+]
