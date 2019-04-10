@@ -37,7 +37,7 @@ http.createServer(function (req, res) {
 
     if (filesCache.has(fileName)) {
         writeHead(res, 200, contentType);
-        res.write(filterData(filesCache.get(fileName), query));
+        res.write(filterData(filesCache.get(fileName), query, contentType));
         res.end();
     }
     else {
@@ -54,7 +54,7 @@ http.createServer(function (req, res) {
             } else {
                 filesCache.set(fileName, data);
                 writeHead(res, 200, contentType);
-                res.write(filterData(data, query));
+                res.write(filterData(data, query, contentType));
             }
             res.end();
         });
@@ -67,19 +67,22 @@ function writeHead(res, status, contentType = 'text/plain') {
     res.writeHead(status, { ...{ 'Content-Type': contentType }, ...CORS_HEADERS });
 }
 
-function filterData(data, query) {
+function filterData(data, queryObj, contentType) {
+    if(contentType !== contentTypes.get('json'))
+        return data;
+        
     return JSON.stringify(JSON.parse(data).filter(item => {
-        for (const prop in query) {
-            if (Object.prototype.hasOwnProperty.call(query, prop) && query[prop] !== '') {
+        for (const prop in queryObj) {
+            if (Object.prototype.hasOwnProperty.call(queryObj, prop) && queryObj[prop] !== '') {
                 switch (prop) {
                     case 'departure':
                     case 'arrival':
-                        if (new Date(item[prop]) < new Date(query[prop])) {
+                        if (new Date(item[prop]) < new Date(queryObj[prop])) {
                             return false;
                         }
                         break;
                     default:
-                        if (item[prop].toLowerCase().substr(0, query[prop].length) !== query[prop]) {
+                        if (item[prop].toLowerCase().substr(0, queryObj[prop].length) !== queryObj[prop]) {
                             return false;
                         }
                         break;
