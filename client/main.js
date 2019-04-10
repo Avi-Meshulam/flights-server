@@ -7,18 +7,30 @@ const FlightFields = {
     to: 'to',
     departure: 'departure',
     arrival: 'arrival',
-    airline: 'airline', 
+    airline: 'airline',
 }
 
 let flightsData = [];
 let tableBody = document.querySelector('#flights-table tbody');
 
-fetch(`${serverURl}/flights.json`)
-    .then(res => res.json())
-    .then(data => {
-        flightsData = data;
-        renderTable();
+document.querySelector('form').addEventListener('submit', e => {
+    //let queryString = event.target.action.split('?')[1];
+    let queryString = '';
+    document.querySelectorAll('form input').forEach(input => {
+        queryString += input.value ?
+            `${queryString ? '&' : ''}${input.name}=${input.value}` : '';
     });
+
+    fetch(`${serverURl}/flights.json${queryString ? `?${queryString}` : ''}`)
+        .then(res => res.json())
+        .then(data => {
+            flightsData = data;
+            renderTable();
+        });
+
+    e.preventDefault(); // prevent the default form action
+    return false;
+});
 
 document.querySelectorAll('th a').forEach(element => {
     element.onclick = function () {
@@ -45,7 +57,7 @@ function tableHeadClicked() {
 }
 
 function getSortFunc(order = 'asc', itemFunc = (x) => x) {
-    return order === 'asc' ? 
+    return order === 'asc' ?
         (a, b) => itemFunc(a) >= itemFunc(b) ? 1 : -1 :
         (a, b) => itemFunc(a) <= itemFunc(b) ? 1 : -1;
 }

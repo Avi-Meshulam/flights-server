@@ -1,17 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    padding: 0 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 table {
     border: 1px royalblue solid;
     border-collapse: collapse;
-}
-
-table caption {
-    text-shadow: 0 2px 3px #555;
-    padding: 10px;
-    font-size: 20px; 
+    margin: 5px;
 }
 
 table th {
@@ -23,5 +33,40 @@ table td {
 }
 
 tr:nth-child(even) {
-    background: lightcyan;
+    background-color: lightgreen;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+form header {
+    width: 100%;
+    background-color: teal;
+    color: white;
+    font-weight: 500;
+    border-bottom: 1px teal solid;
+}
+
+form button {
+    margin: 10px;
+    align-self: center;
+}
+
+label {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+input:not([type="submit"]) {
+    background-color: lightyellow;
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px 0;
 }

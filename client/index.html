@@ -9,9 +9,14 @@
 </head>
 
 <body>
+    <header>
+        <h1>
+            Arriving / Departing Flights
+        </h1>
+    </header>
+
     <main>
         <table id="flights-table">
-            <caption>Flights</caption>
             <thead>
                 <tr>
                     <th><a href="#" data-field="id">No.</a></th>
@@ -24,6 +29,38 @@
             </thead>
             <tbody></tbody>
         </table>
+
+        <form method="GET">
+            <header>Filters</header>
+            <section class="input">
+                <label for="flight-number">Flight No.</label>
+                <input id="flight-number" name="id" type="text">
+            </section>
+            <section class="input">
+                <label for="flight-from">From</label>
+                <input id="flight-from" name="from" type="text">
+            </section>
+            <section class="input">
+                <label for="flight-to">To</label>
+                <input id="flight-to" name="to" type="text">
+            </section>
+            <section class="input">
+                <label for="flight-departure">Departure</label>
+                <input id="flight-departure" name="departure" type="date">
+            </section>
+            <section class="input">
+                <label for="flight-arrival">Arrival</label>
+                <input id="flight-arrival" name="arrival" type="date">
+            </section>
+            <section class="input">
+                <label for="flight-airline">Airline</label>
+                <input id="flight-airline" name="airline" type="text">
+            </section>
+            <section class="input">
+                <button type="submit">Send</button>
+                <button type="reset">Clear</button>
+            </section>
+        </form>
     </main>
 
     <script src="main.js"></script>
